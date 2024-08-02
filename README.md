@@ -53,8 +53,8 @@ brew install tinyxml2
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/mbm6448/semi_markov_simulation.git
-cd semi_markov_simulation
+git clone https://github.com/mbm6448/SMP_CPP.git
+cd SMP_CPP
 ```
 
 Compile the project using the provided `Makefile`:
