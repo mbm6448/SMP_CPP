@@ -1,0 +1,9 @@
+<configuration>
+    <states>3</states>
+    <t_max>10.0</t_max>
+    <time_step>1.0</time_step>
+    <tol>1e-6</tol>
+    <transition_file>transitions.csv</transition_file>
+    <initial_file>initial_probabilities.csv</initial_file>
+</configuration>
+
