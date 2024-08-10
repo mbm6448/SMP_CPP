@@ -14,13 +14,13 @@ SRCDIR = src
 TARGET = $(BINDIR)/semi_markov
 
 # Source files
-SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/smp.cpp
+SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/smp.cpp $(SRCDIR)/ConfigParser.cpp
 
 # Header files
-HEADERS = $(INCLUDEDIR)/smp.h
+HEADERS = $(INCLUDEDIR)/smp.h $(INCLUDEDIR)/ConfigParser.h
 
 # Object files
-OBJS = $(BUILDDIR)/main.o $(BUILDDIR)/smp.o
+OBJS = $(BUILDDIR)/main.o $(BUILDDIR)/smp.o $(BUILDDIR)/ConfigParser.o
 
 # Default rule to build the target
 all: $(TARGET)
@@ -37,6 +37,10 @@ $(BUILDDIR)/main.o: $(SRCDIR)/main.cpp $(HEADERS) | $(BUILDDIR)
 $(BUILDDIR)/smp.o: $(SRCDIR)/smp.cpp $(HEADERS) | $(BUILDDIR)
 	$(CXX) $(CXXFLAGS) -I$(INCLUDEDIR) -c $< -o $@
 
+# Rule to compile ConfigParser.cpp
+$(BUILDDIR)/ConfigParser.o: $(SRCDIR)/ConfigParser.cpp $(INCLUDEDIR)/ConfigParser.h | $(BUILDDIR)
+	$(CXX) $(CXXFLAGS) -I$(INCLUDEDIR) -c $< -o $@
+
 # Rule to create the bin directory
 $(BINDIR):
 	mkdir -p $(BINDIR)
@@ -48,7 +52,7 @@ $(BUILDDIR):
 # Clean up the build
 clean:
 	rm -rf $(BUILDDIR) $(BINDIR)
+	rm -rf transition_probabilities.csv
 
 # Phony targets
 .PHONY: all clean
-
