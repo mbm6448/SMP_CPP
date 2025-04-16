@@ -7,7 +7,6 @@ This project implements a Semi-Markov Process (SMP) simulation in C++. The simul
 - **Configurable Parameters**: Specify the number of states, transition probabilities, and initial probabilities via XML and CSV files.
 - **OpenMP Parallelization**: The simulation leverages OpenMP to perform calculations in parallel, speeding up computation.
 - **Numerical Integration by Gauss-Kronod method**: To get the transition probability matrix at each time step. 
-- **XML and CSV Integration**: Use an XML file to point to CSV files containing necessary data, making the simulation flexible and easy to configure.
 
 ## Project Structure
 
