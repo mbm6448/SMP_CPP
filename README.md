@@ -28,7 +28,6 @@ project_root/
 
 - **C++ Compiler**: Ensure you have `g++` installed and supports at least C++17 standard.
 - **TinyXML2**: Install TinyXML2 via your package manager or include the source files in your project.
-- **OpenMP**: Make sure your compiler supports OpenMP for parallel execution.
 
 ## Installation
 
